@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		82DFA8BA1826FFFD00B5D6EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFA8B91826FFFD00B5D6EA /* Foundation.framework */; };
+		82DFA8BC1826FFFD00B5D6EA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFA8BB1826FFFD00B5D6EA /* CoreGraphics.framework */; };
+		82DFA8BE1826FFFD00B5D6EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFA8BD1826FFFD00B5D6EA /* UIKit.framework */; };
+		82DFA8C41826FFFD00B5D6EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82DFA8C21826FFFD00B5D6EA /* InfoPlist.strings */; };
+		82DFA8C61826FFFD00B5D6EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFA8C51826FFFD00B5D6EA /* main.m */; };
+		82DFA8CA1826FFFD00B5D6EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFA8C91826FFFD00B5D6EA /* AppDelegate.m */; };
+		82DFA8CD1826FFFD00B5D6EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82DFA8CB1826FFFD00B5D6EA /* Main.storyboard */; };
+		82DFA8D01826FFFD00B5D6EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFA8CF1826FFFD00B5D6EA /* ViewController.m */; };
+		82DFA8D21826FFFD00B5D6EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82DFA8D11826FFFD00B5D6EA /* Images.xcassets */; };
+		82DFA8D91826FFFD00B5D6EA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFA8D81826FFFD00B5D6EA /* XCTest.framework */; };
+		82DFA8DA1826FFFD00B5D6EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFA8B91826FFFD00B5D6EA /* Foundation.framework */; };
+		82DFA8DB1826FFFD00B5D6EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFA8BD1826FFFD00B5D6EA /* UIKit.framework */; };
+		82DFA8E31826FFFD00B5D6EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82DFA8E11826FFFD00B5D6EA /* InfoPlist.strings */; };
+		82DFA8E51826FFFD00B5D6EA /* PureEnergyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFA8E41826FFFD00B5D6EA /* PureEnergyTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		82DFA8DC1826FFFD00B5D6EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82DFA8AE1826FFFD00B5D6EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 82DFA8B51826FFFD00B5D6EA;
+			remoteInfo = PureEnergy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		82DFA8B61826FFFD00B5D6EA /* PureEnergy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PureEnergy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		82DFA8B91826FFFD00B5D6EA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		82DFA8BB1826FFFD00B5D6EA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		82DFA8BD1826FFFD00B5D6EA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		82DFA8C11826FFFD00B5D6EA /* PureEnergy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PureEnergy-Info.plist"; sourceTree = "<group>"; };
+		82DFA8C31826FFFD00B5D6EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		82DFA8C51826FFFD00B5D6EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		82DFA8C71826FFFD00B5D6EA /* PureEnergy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PureEnergy-Prefix.pch"; sourceTree = "<group>"; };
+		82DFA8C81826FFFD00B5D6EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		82DFA8C91826FFFD00B5D6EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		82DFA8CC1826FFFD00B5D6EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		82DFA8CE1826FFFD00B5D6EA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		82DFA8CF1826FFFD00B5D6EA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		82DFA8D11826FFFD00B5D6EA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		82DFA8D71826FFFD00B5D6EA /* PureEnergyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PureEnergyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		82DFA8D81826FFFD00B5D6EA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		82DFA8E01826FFFD00B5D6EA /* PureEnergyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PureEnergyTests-Info.plist"; sourceTree = "<group>"; };
+		82DFA8E21826FFFD00B5D6EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		82DFA8E41826FFFD00B5D6EA /* PureEnergyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PureEnergyTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		82DFA8B31826FFFD00B5D6EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82DFA8BC1826FFFD00B5D6EA /* CoreGraphics.framework in Frameworks */,
+				82DFA8BE1826FFFD00B5D6EA /* UIKit.framework in Frameworks */,
+				82DFA8BA1826FFFD00B5D6EA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82DFA8D41826FFFD00B5D6EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82DFA8D91826FFFD00B5D6EA /* XCTest.framework in Frameworks */,
+				82DFA8DB1826FFFD00B5D6EA /* UIKit.framework in Frameworks */,
+				82DFA8DA1826FFFD00B5D6EA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		82DFA8AD1826FFFD00B5D6EA = {
+			isa = PBXGroup;
+			children = (
+				82DFA8BF1826FFFD00B5D6EA /* PureEnergy */,
+				82DFA8DE1826FFFD00B5D6EA /* PureEnergyTests */,
+				82DFA8B81826FFFD00B5D6EA /* Frameworks */,
+				82DFA8B71826FFFD00B5D6EA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		82DFA8B71826FFFD00B5D6EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				82DFA8B61826FFFD00B5D6EA /* PureEnergy.app */,
+				82DFA8D71826FFFD00B5D6EA /* PureEnergyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		82DFA8B81826FFFD00B5D6EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82DFA8B91826FFFD00B5D6EA /* Foundation.framework */,
+				82DFA8BB1826FFFD00B5D6EA /* CoreGraphics.framework */,
+				82DFA8BD1826FFFD00B5D6EA /* UIKit.framework */,
+				82DFA8D81826FFFD00B5D6EA /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		82DFA8BF1826FFFD00B5D6EA /* PureEnergy */ = {
+			isa = PBXGroup;
+			children = (
+				82DFA8C81826FFFD00B5D6EA /* AppDelegate.h */,
+				82DFA8C91826FFFD00B5D6EA /* AppDelegate.m */,
+				82DFA8CB1826FFFD00B5D6EA /* Main.storyboard */,
+				82DFA8CE1826FFFD00B5D6EA /* ViewController.h */,
+				82DFA8CF1826FFFD00B5D6EA /* ViewController.m */,
+				82DFA8D11826FFFD00B5D6EA /* Images.xcassets */,
+				82DFA8C01826FFFD00B5D6EA /* Supporting Files */,
+			);
+			path = PureEnergy;
+			sourceTree = "<group>";
+		};
+		82DFA8C01826FFFD00B5D6EA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				82DFA8C11826FFFD00B5D6EA /* PureEnergy-Info.plist */,
+				82DFA8C21826FFFD00B5D6EA /* InfoPlist.strings */,
+				82DFA8C51826FFFD00B5D6EA /* main.m */,
+				82DFA8C71826FFFD00B5D6EA /* PureEnergy-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		82DFA8DE1826FFFD00B5D6EA /* PureEnergyTests */ = {
+			isa = PBXGroup;
+			children = (
+				82DFA8E41826FFFD00B5D6EA /* PureEnergyTests.m */,
+				82DFA8DF1826FFFD00B5D6EA /* Supporting Files */,
+			);
+			path = PureEnergyTests;
+			sourceTree = "<group>";
+		};
+		82DFA8DF1826FFFD00B5D6EA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				82DFA8E01826FFFD00B5D6EA /* PureEnergyTests-Info.plist */,
+				82DFA8E11826FFFD00B5D6EA /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		82DFA8B51826FFFD00B5D6EA /* PureEnergy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82DFA8E81826FFFD00B5D6EA /* Build configuration list for PBXNativeTarget "PureEnergy" */;
+			buildPhases = (
+				82DFA8B21826FFFD00B5D6EA /* Sources */,
+				82DFA8B31826FFFD00B5D6EA /* Frameworks */,
+				82DFA8B41826FFFD00B5D6EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PureEnergy;
+			productName = PureEnergy;
+			productReference = 82DFA8B61826FFFD00B5D6EA /* PureEnergy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		82DFA8D61826FFFD00B5D6EA /* PureEnergyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82DFA8EB1826FFFD00B5D6EA /* Build configuration list for PBXNativeTarget "PureEnergyTests" */;
+			buildPhases = (
+				82DFA8D31826FFFD00B5D6EA /* Sources */,
+				82DFA8D41826FFFD00B5D6EA /* Frameworks */,
+				82DFA8D51826FFFD00B5D6EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				82DFA8DD1826FFFD00B5D6EA /* PBXTargetDependency */,
+			);
+			name = PureEnergyTests;
+			productName = PureEnergyTests;
+			productReference = 82DFA8D71826FFFD00B5D6EA /* PureEnergyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		82DFA8AE1826FFFD00B5D6EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Andrés Pesate";
+				TargetAttributes = {
+					82DFA8D61826FFFD00B5D6EA = {
+						TestTargetID = 82DFA8B51826FFFD00B5D6EA;
+					};
+				};
+			};
+			buildConfigurationList = 82DFA8B11826FFFD00B5D6EA /* Build configuration list for PBXProject "PureEnergy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 82DFA8AD1826FFFD00B5D6EA;
+			productRefGroup = 82DFA8B71826FFFD00B5D6EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				82DFA8B51826FFFD00B5D6EA /* PureEnergy */,
+				82DFA8D61826FFFD00B5D6EA /* PureEnergyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		82DFA8B41826FFFD00B5D6EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82DFA8D21826FFFD00B5D6EA /* Images.xcassets in Resources */,
+				82DFA8C41826FFFD00B5D6EA /* InfoPlist.strings in Resources */,
+				82DFA8CD1826FFFD00B5D6EA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82DFA8D51826FFFD00B5D6EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82DFA8E31826FFFD00B5D6EA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		82DFA8B21826FFFD00B5D6EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82DFA8D01826FFFD00B5D6EA /* ViewController.m in Sources */,
+				82DFA8CA1826FFFD00B5D6EA /* AppDelegate.m in Sources */,
+				82DFA8C61826FFFD00B5D6EA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82DFA8D31826FFFD00B5D6EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82DFA8E51826FFFD00B5D6EA /* PureEnergyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		82DFA8DD1826FFFD00B5D6EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 82DFA8B51826FFFD00B5D6EA /* PureEnergy */;
+			targetProxy = 82DFA8DC1826FFFD00B5D6EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		82DFA8C21826FFFD00B5D6EA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				82DFA8C31826FFFD00B5D6EA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		82DFA8CB1826FFFD00B5D6EA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				82DFA8CC1826FFFD00B5D6EA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		82DFA8E11826FFFD00B5D6EA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				82DFA8E21826FFFD00B5D6EA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		82DFA8E61826FFFD00B5D6EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		82DFA8E71826FFFD00B5D6EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		82DFA8E91826FFFD00B5D6EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PureEnergy/PureEnergy-Prefix.pch";
+				INFOPLIST_FILE = "PureEnergy/PureEnergy-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		82DFA8EA1826FFFD00B5D6EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PureEnergy/PureEnergy-Prefix.pch";
+				INFOPLIST_FILE = "PureEnergy/PureEnergy-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		82DFA8EC1826FFFD00B5D6EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PureEnergy.app/PureEnergy";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PureEnergy/PureEnergy-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PureEnergyTests/PureEnergyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		82DFA8ED1826FFFD00B5D6EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PureEnergy.app/PureEnergy";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PureEnergy/PureEnergy-Prefix.pch";
+				INFOPLIST_FILE = "PureEnergyTests/PureEnergyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		82DFA8B11826FFFD00B5D6EA /* Build configuration list for PBXProject "PureEnergy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82DFA8E61826FFFD00B5D6EA /* Debug */,
+				82DFA8E71826FFFD00B5D6EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		82DFA8E81826FFFD00B5D6EA /* Build configuration list for PBXNativeTarget "PureEnergy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82DFA8E91826FFFD00B5D6EA /* Debug */,
+				82DFA8EA1826FFFD00B5D6EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		82DFA8EB1826FFFD00B5D6EA /* Build configuration list for PBXNativeTarget "PureEnergyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82DFA8EC1826FFFD00B5D6EA /* Debug */,
+				82DFA8ED1826FFFD00B5D6EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 82DFA8AE1826FFFD00B5D6EA /* Project object */;
+}

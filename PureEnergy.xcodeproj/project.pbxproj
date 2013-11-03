@@ -14,13 +14,16 @@
 		82DFA8C61826FFFD00B5D6EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFA8C51826FFFD00B5D6EA /* main.m */; };
 		82DFA8CA1826FFFD00B5D6EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFA8C91826FFFD00B5D6EA /* AppDelegate.m */; };
 		82DFA8CD1826FFFD00B5D6EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82DFA8CB1826FFFD00B5D6EA /* Main.storyboard */; };
-		82DFA8D01826FFFD00B5D6EA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFA8CF1826FFFD00B5D6EA /* ViewController.m */; };
+		82DFA8D01826FFFD00B5D6EA /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFA8CF1826FFFD00B5D6EA /* LogInViewController.m */; };
 		82DFA8D21826FFFD00B5D6EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82DFA8D11826FFFD00B5D6EA /* Images.xcassets */; };
 		82DFA8D91826FFFD00B5D6EA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFA8D81826FFFD00B5D6EA /* XCTest.framework */; };
 		82DFA8DA1826FFFD00B5D6EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFA8B91826FFFD00B5D6EA /* Foundation.framework */; };
 		82DFA8DB1826FFFD00B5D6EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFA8BD1826FFFD00B5D6EA /* UIKit.framework */; };
 		82DFA8E31826FFFD00B5D6EA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82DFA8E11826FFFD00B5D6EA /* InfoPlist.strings */; };
 		82DFA8E51826FFFD00B5D6EA /* PureEnergyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFA8E41826FFFD00B5D6EA /* PureEnergyTests.m */; };
+		82DFA8F0182702BB00B5D6EA /* MetersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFA8EF182702BB00B5D6EA /* MetersViewController.m */; };
+		82DFA8F31827031F00B5D6EA /* RankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFA8F21827031F00B5D6EA /* RankingViewController.m */; };
+		82DFA8F61827032900B5D6EA /* GraphicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFA8F51827032900B5D6EA /* GraphicsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +48,20 @@
 		82DFA8C81826FFFD00B5D6EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		82DFA8C91826FFFD00B5D6EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		82DFA8CC1826FFFD00B5D6EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		82DFA8CE1826FFFD00B5D6EA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		82DFA8CF1826FFFD00B5D6EA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		82DFA8CE1826FFFD00B5D6EA /* LogInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		82DFA8CF1826FFFD00B5D6EA /* LogInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		82DFA8D11826FFFD00B5D6EA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		82DFA8D71826FFFD00B5D6EA /* PureEnergyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PureEnergyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82DFA8D81826FFFD00B5D6EA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		82DFA8E01826FFFD00B5D6EA /* PureEnergyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PureEnergyTests-Info.plist"; sourceTree = "<group>"; };
 		82DFA8E21826FFFD00B5D6EA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		82DFA8E41826FFFD00B5D6EA /* PureEnergyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PureEnergyTests.m; sourceTree = "<group>"; };
+		82DFA8EE182702BB00B5D6EA /* MetersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetersViewController.h; sourceTree = "<group>"; };
+		82DFA8EF182702BB00B5D6EA /* MetersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetersViewController.m; sourceTree = "<group>"; };
+		82DFA8F11827031F00B5D6EA /* RankingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingViewController.h; sourceTree = "<group>"; };
+		82DFA8F21827031F00B5D6EA /* RankingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingViewController.m; sourceTree = "<group>"; };
+		82DFA8F41827032900B5D6EA /* GraphicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsViewController.h; sourceTree = "<group>"; };
+		82DFA8F51827032900B5D6EA /* GraphicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +124,14 @@
 				82DFA8C81826FFFD00B5D6EA /* AppDelegate.h */,
 				82DFA8C91826FFFD00B5D6EA /* AppDelegate.m */,
 				82DFA8CB1826FFFD00B5D6EA /* Main.storyboard */,
-				82DFA8CE1826FFFD00B5D6EA /* ViewController.h */,
-				82DFA8CF1826FFFD00B5D6EA /* ViewController.m */,
+				82DFA8CE1826FFFD00B5D6EA /* LogInViewController.h */,
+				82DFA8CF1826FFFD00B5D6EA /* LogInViewController.m */,
+				82DFA8EE182702BB00B5D6EA /* MetersViewController.h */,
+				82DFA8EF182702BB00B5D6EA /* MetersViewController.m */,
+				82DFA8F11827031F00B5D6EA /* RankingViewController.h */,
+				82DFA8F21827031F00B5D6EA /* RankingViewController.m */,
+				82DFA8F41827032900B5D6EA /* GraphicsViewController.h */,
+				82DFA8F51827032900B5D6EA /* GraphicsViewController.m */,
 				82DFA8D11826FFFD00B5D6EA /* Images.xcassets */,
 				82DFA8C01826FFFD00B5D6EA /* Supporting Files */,
 			);
@@ -249,9 +264,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82DFA8D01826FFFD00B5D6EA /* ViewController.m in Sources */,
+				82DFA8F0182702BB00B5D6EA /* MetersViewController.m in Sources */,
+				82DFA8F61827032900B5D6EA /* GraphicsViewController.m in Sources */,
+				82DFA8D01826FFFD00B5D6EA /* LogInViewController.m in Sources */,
 				82DFA8CA1826FFFD00B5D6EA /* AppDelegate.m in Sources */,
 				82DFA8C61826FFFD00B5D6EA /* main.m in Sources */,
+				82DFA8F31827031F00B5D6EA /* RankingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

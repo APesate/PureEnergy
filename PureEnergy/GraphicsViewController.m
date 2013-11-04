@@ -10,6 +10,8 @@
 
 @interface GraphicsViewController ()
 
+-(IBAction)goBack:(id)sender;
+
 @end
 
 @implementation GraphicsViewController
@@ -35,4 +37,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)goBack:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

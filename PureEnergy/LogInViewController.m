@@ -10,6 +10,7 @@
 
 @interface LogInViewController (){
     
+    __weak IBOutlet UIView* fieldsContainer;
     __weak IBOutlet UIImageView *bannerImageView;
     __weak IBOutlet UITextField *usernameTextField;
     __weak IBOutlet UITextField *passwordTextField;
@@ -18,6 +19,8 @@
     __weak IBOutlet UIButton *forgotPasswordButton;
     __weak IBOutlet UIButton *loginButton;
     __weak IBOutlet UIButton *registerButton;
+    
+    BOOL isScrolled;
 }
 - (IBAction)registerNewUser:(id)sender;
 - (IBAction)recoverPassword:(id)sender;
@@ -29,10 +32,20 @@
 
 - (void)viewDidLoad
 {
+    isScrolled = NO;
+    
     [super viewDidLoad];
     UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
     
     [self.view addGestureRecognizer:tapGesture];
+    
+    [fieldsContainer.layer setCornerRadius:30];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [UIView animateWithDuration:0.7f animations:^{
+        [fieldsContainer setAlpha:1.0];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,7 +54,28 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - IBActions
+
 - (IBAction)registerNewUser:(id)sender {
+    __block const int downMove = 10;
+    __block const int moveOffScreen = fieldsContainer.frame.origin.y + fieldsContainer.frame.size.height + 20;
+    
+    [UIView animateWithDuration:0.7f animations:^{
+        [fieldsContainer setFrame:CGRectMake(fieldsContainer.frame.origin.x,
+                                             fieldsContainer.frame.origin.y + downMove,
+                                             fieldsContainer.frame.size.width,
+                                             fieldsContainer.frame.size.height)];
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.5f animations:^{
+            [fieldsContainer setFrame:CGRectMake(fieldsContainer.frame.origin.x,
+                                                 fieldsContainer.frame.origin.y - moveOffScreen,
+                                                 fieldsContainer.frame.size.width,
+                                                 fieldsContainer.frame.size.height)];
+            [fieldsContainer setAlpha:0.0];
+        } completion:^(BOOL finished) {
+            [self performSegueWithIdentifier:@"toRegister" sender:self];
+        }];
+    }];
 }
 
 - (IBAction)recoverPassword:(id)sender {
@@ -51,16 +85,18 @@
     [self tryLogIn];
 }
 
+#pragma mark - WebServices connections
+
 -(void)tryLogIn{
     
-    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"http://ceis.unimet.edu.ve/WebService/APesate/login.php?nom=%@&pass=%@", usernameTextField.text, passwordTextField.text]];
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"http://ceis.unimet.edu.ve/WebService/Andres/login.php?appKey=KEY&seudonimo=%@&pass=%@", usernameTextField.text, passwordTextField.text]];
     NSURLRequest* request = [NSURLRequest requestWithURL:url];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         
         NSString* answer = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
         
-        if ([answer isEqualToString:@"0"]) {
+        if (![answer isEqualToString:@"0"]) {
             
             NSDictionary* jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
             NSUserDefaults* userDefault = [NSUserDefaults standardUserDefaults];
@@ -78,92 +114,39 @@
         if (error) {
             NSLog(@"Error: %@", error);
         }
-        
     }];
 }
+
+#pragma mark - UITextFieldDelegate
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     
     static int scroll = 85;
     
-    [UIView animateWithDuration:0.5f animations:^{
-        [usernameLabel setFrame:CGRectMake(usernameLabel.frame.origin.x,
-                                           usernameLabel.frame.origin.y - scroll,
-                                           usernameLabel.frame.size.width,
-                                           usernameLabel.frame.size.height)];
-        
-        [usernameTextField setFrame:CGRectMake(usernameTextField.frame.origin.x,
-                                               usernameTextField.frame.origin.y - scroll,
-                                               usernameTextField.frame.size.width,
-                                               usernameTextField.frame.size.height)];
-        
-        [passwordTextField setFrame:CGRectMake(passwordTextField.frame.origin.x,
-                                               passwordTextField.frame.origin.y - scroll,
-                                               passwordTextField.frame.size.width,
-                                               passwordTextField.frame.size.height)];
-        
-        [passwordLabel setFrame:CGRectMake(passwordLabel.frame.origin.x,
-                                           passwordLabel.frame.origin.y - scroll,
-                                           passwordLabel.frame.size.width,
-                                           passwordLabel.frame.size.height)];
-        
-        [registerButton setFrame:CGRectMake(registerButton.frame.origin.x,
-                                            registerButton.frame.origin.y - scroll,
-                                            registerButton.frame.size.width,
-                                            registerButton.frame.size.height)];
-        
-        [forgotPasswordButton setFrame:CGRectMake(forgotPasswordButton.frame.origin.x,
-                                                  forgotPasswordButton.frame.origin.y - scroll,
-                                                  forgotPasswordButton.frame.size.width,
-                                                  forgotPasswordButton.frame.size.height)];
-        
-        [loginButton setFrame:CGRectMake(loginButton.frame.origin.x,
-                                         loginButton.frame.origin.y - scroll,
-                                         loginButton.frame.size.width,
-                                         loginButton.frame.size.height)];
-    }];
+    if (!isScrolled) {
+        [UIView animateWithDuration:0.4f animations:^{
+            [fieldsContainer setFrame:CGRectMake(fieldsContainer.frame.origin.x,
+                                                 fieldsContainer.frame.origin.y - scroll,
+                                                 fieldsContainer.frame.size.width,
+                                                 fieldsContainer.frame.size.height)];
+        }];
+        isScrolled = YES;
+    }
 }
 
--(void)textFieldDidEndEditing:(UITextField *)textField{
+-(void)scrollDownContainer{
     
     static int scroll = 85;
     
-    [UIView animateWithDuration:0.5f animations:^{
-        [usernameLabel setFrame:CGRectMake(usernameLabel.frame.origin.x,
-                                           usernameLabel.frame.origin.y + scroll,
-                                           usernameLabel.frame.size.width,
-                                           usernameLabel.frame.size.height)];
-        
-        [usernameTextField setFrame:CGRectMake(usernameTextField.frame.origin.x,
-                                               usernameTextField.frame.origin.y + scroll,
-                                               usernameTextField.frame.size.width,
-                                               usernameTextField.frame.size.height)];
-        
-        [passwordTextField setFrame:CGRectMake(passwordTextField.frame.origin.x,
-                                               passwordTextField.frame.origin.y + scroll,
-                                               passwordTextField.frame.size.width,
-                                               passwordTextField.frame.size.height)];
-        
-        [passwordLabel setFrame:CGRectMake(passwordLabel.frame.origin.x,
-                                           passwordLabel.frame.origin.y + scroll,
-                                           passwordLabel.frame.size.width,
-                                           passwordLabel.frame.size.height)];
-        
-        [registerButton setFrame:CGRectMake(registerButton.frame.origin.x,
-                                            registerButton.frame.origin.y + scroll,
-                                            registerButton.frame.size.width,
-                                            registerButton.frame.size.height)];
-        
-        [forgotPasswordButton setFrame:CGRectMake(forgotPasswordButton.frame.origin.x,
-                                                  forgotPasswordButton.frame.origin.y + scroll,
-                                                  forgotPasswordButton.frame.size.width,
-                                                  forgotPasswordButton.frame.size.height)];
-        
-        [loginButton setFrame:CGRectMake(loginButton.frame.origin.x,
-                                         loginButton.frame.origin.y +scroll,
-                                         loginButton.frame.size.width,
-                                         loginButton.frame.size.height)];
-    }];
+    if (isScrolled) {
+        [UIView animateWithDuration:0.4f animations:^{
+            [fieldsContainer setFrame:CGRectMake(fieldsContainer.frame.origin.x,
+                                                 fieldsContainer.frame.origin.y + scroll,
+                                                 fieldsContainer.frame.size.width,
+                                                 fieldsContainer.frame.size.height)];
+        }];
+        isScrolled = NO;
+    }
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -172,6 +155,8 @@
         return YES;
     }else{
         [self tryLogIn];
+        [textField resignFirstResponder];
+        [self scrollDownContainer];
         return YES;
     }
 }
@@ -180,6 +165,7 @@
     if (sender.state == UIGestureRecognizerStateEnded) {
         [usernameTextField resignFirstResponder];
         [passwordTextField resignFirstResponder];
+        [self scrollDownContainer];
     }
 }
 @end

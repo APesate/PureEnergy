@@ -10,6 +10,8 @@
 
 @interface RankingViewController ()
 
+-(IBAction)goBack:(id)sender;
+
 @end
 
 @implementation RankingViewController
@@ -33,6 +35,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)goBack:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

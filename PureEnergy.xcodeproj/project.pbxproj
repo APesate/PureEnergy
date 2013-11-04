@@ -24,6 +24,7 @@
 		82DFA8F0182702BB00B5D6EA /* MetersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFA8EF182702BB00B5D6EA /* MetersViewController.m */; };
 		82DFA8F31827031F00B5D6EA /* RankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFA8F21827031F00B5D6EA /* RankingViewController.m */; };
 		82DFA8F61827032900B5D6EA /* GraphicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFA8F51827032900B5D6EA /* GraphicsViewController.m */; };
+		82DFA8F91827232000B5D6EA /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DFA8F81827232000B5D6EA /* RegisterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		82DFA8F21827031F00B5D6EA /* RankingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingViewController.m; sourceTree = "<group>"; };
 		82DFA8F41827032900B5D6EA /* GraphicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsViewController.h; sourceTree = "<group>"; };
 		82DFA8F51827032900B5D6EA /* GraphicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicsViewController.m; sourceTree = "<group>"; };
+		82DFA8F71827232000B5D6EA /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		82DFA8F81827232000B5D6EA /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 				82DFA8CB1826FFFD00B5D6EA /* Main.storyboard */,
 				82DFA8CE1826FFFD00B5D6EA /* LogInViewController.h */,
 				82DFA8CF1826FFFD00B5D6EA /* LogInViewController.m */,
+				82DFA8F71827232000B5D6EA /* RegisterViewController.h */,
+				82DFA8F81827232000B5D6EA /* RegisterViewController.m */,
 				82DFA8EE182702BB00B5D6EA /* MetersViewController.h */,
 				82DFA8EF182702BB00B5D6EA /* MetersViewController.m */,
 				82DFA8F11827031F00B5D6EA /* RankingViewController.h */,
@@ -268,6 +273,7 @@
 				82DFA8F61827032900B5D6EA /* GraphicsViewController.m in Sources */,
 				82DFA8D01826FFFD00B5D6EA /* LogInViewController.m in Sources */,
 				82DFA8CA1826FFFD00B5D6EA /* AppDelegate.m in Sources */,
+				82DFA8F91827232000B5D6EA /* RegisterViewController.m in Sources */,
 				82DFA8C61826FFFD00B5D6EA /* main.m in Sources */,
 				82DFA8F31827031F00B5D6EA /* RankingViewController.m in Sources */,
 			);

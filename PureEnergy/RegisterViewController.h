@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  RegisterViewController.h
 //  PureEnergy
 //
 //  Created by Andrés Pesate on 11/3/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LogInViewController : UIViewController <UIAlertViewDelegate, UITextFieldDelegate>
+@interface RegisterViewController : UIViewController
 
 @end

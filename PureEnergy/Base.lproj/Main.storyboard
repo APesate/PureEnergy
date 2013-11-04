@@ -44,12 +44,18 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="vAY-JV-dPm"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9aV-wd-zgD">
                                 <rect key="frame" x="100" y="336" width="200" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="join" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="7RP-dt-9bR"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSi-8p-Mfi">
                                 <rect key="frame" x="254" y="374" width="43" height="30"/>
@@ -79,6 +85,7 @@
                                 </state>
                                 <connections>
                                     <action selector="registerNewUser:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6D5-vW-OFZ"/>
+                                    <segue destination="3NN-83-dAf" kind="modal" identifier="toRegister" id="xdB-Vb-vDs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -106,7 +113,12 @@
                     </view>
                     <connections>
                         <outlet property="bannerImageView" destination="2sf-c2-K7A" id="0TZ-ml-9HN"/>
+                        <outlet property="forgotPasswordButton" destination="R4B-Si-k23" id="HNL-aB-hcT"/>
+                        <outlet property="loginButton" destination="sSi-8p-Mfi" id="yM2-Dd-IBB"/>
+                        <outlet property="passwordLabel" destination="kmk-3N-OoQ" id="M3X-8u-Evk"/>
                         <outlet property="passwordTextField" destination="9aV-wd-zgD" id="jhe-i3-P8x"/>
+                        <outlet property="registerButton" destination="T6Q-CK-oJN" id="p2h-bU-AA6"/>
+                        <outlet property="usernameLabel" destination="7PA-NC-wWV" id="ihr-dr-6a4"/>
                         <outlet property="usernameTextField" destination="PYd-TM-frK" id="xIB-q6-UgA"/>
                         <segue destination="1KJ-Qz-6bk" kind="modal" identifier="toMeters" modalTransitionStyle="crossDissolve" id="txS-dE-cYa"/>
                     </connections>
@@ -165,7 +177,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ora-nr-fhY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="58"/>
+            <point key="canvasLocation" x="93" y="-340"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="Sta-Rg-Jpk">
+            <objects>
+                <viewController id="3NN-83-dAf" customClass="RegisterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EW5-1I-ye3"/>
+                        <viewControllerLayoutGuide type="bottom" id="l1H-Eg-xLO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ap9-5h-BvV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Register" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnq-Ll-uGU">
+                                <rect key="frame" x="128" y="273" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agd-cG-b8R">
+                                <rect key="frame" x="143" y="357" width="35" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBack:" destination="3NN-83-dAf" eventType="touchUpInside" id="d91-IE-duj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jdP-1B-m8S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="93" y="361"/>
         </scene>
         <!--Graphics View Controller-->
         <scene sceneID="g3k-Zy-Cmd">

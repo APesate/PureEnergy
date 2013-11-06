@@ -8,7 +8,10 @@
 
 #import "MetersViewController.h"
 
-@interface MetersViewController ()
+@interface MetersViewController (){
+    __weak IBOutlet Meter* electricMeter;
+    __weak IBOutlet Meter* waterMeter;
+}
 
 @end
 
@@ -27,6 +30,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [electricMeter.layer setCornerRadius:30];
+    [waterMeter.layer setCornerRadius:30];
+    
     UISwipeGestureRecognizer* rightSwipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGesture:)];
     UISwipeGestureRecognizer* leftSwipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGesture:)];
     

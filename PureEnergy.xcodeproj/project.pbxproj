@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82497BBC1829398E0031945A /* Meter.m in Sources */ = {isa = PBXBuildFile; fileRef = 82497BBB1829398E0031945A /* Meter.m */; };
+		82497BC01829A4D70031945A /* Dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 82497BBF1829A4D70031945A /* Dot.png */; };
 		82DFA8BA1826FFFD00B5D6EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFA8B91826FFFD00B5D6EA /* Foundation.framework */; };
 		82DFA8BC1826FFFD00B5D6EA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFA8BB1826FFFD00B5D6EA /* CoreGraphics.framework */; };
 		82DFA8BE1826FFFD00B5D6EA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82DFA8BD1826FFFD00B5D6EA /* UIKit.framework */; };
@@ -38,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		82497BBA1829398E0031945A /* Meter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meter.h; sourceTree = "<group>"; };
+		82497BBB1829398E0031945A /* Meter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meter.m; sourceTree = "<group>"; };
+		82497BBF1829A4D70031945A /* Dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Dot.png; path = Images/Dot.png; sourceTree = "<group>"; };
 		82DFA8B61826FFFD00B5D6EA /* PureEnergy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PureEnergy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82DFA8B91826FFFD00B5D6EA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		82DFA8BB1826FFFD00B5D6EA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -91,6 +96,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82497BB91829395E0031945A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				82DFA8CE1826FFFD00B5D6EA /* LogInViewController.h */,
+				82DFA8CF1826FFFD00B5D6EA /* LogInViewController.m */,
+				82DFA8F71827232000B5D6EA /* RegisterViewController.h */,
+				82DFA8F81827232000B5D6EA /* RegisterViewController.m */,
+				82DFA8EE182702BB00B5D6EA /* MetersViewController.h */,
+				82DFA8EF182702BB00B5D6EA /* MetersViewController.m */,
+				82DFA8F11827031F00B5D6EA /* RankingViewController.h */,
+				82DFA8F21827031F00B5D6EA /* RankingViewController.m */,
+				82DFA8F41827032900B5D6EA /* GraphicsViewController.h */,
+				82DFA8F51827032900B5D6EA /* GraphicsViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		82497BBD182939920031945A /* Meter */ = {
+			isa = PBXGroup;
+			children = (
+				82497BBA1829398E0031945A /* Meter.h */,
+				82497BBB1829398E0031945A /* Meter.m */,
+				82497BBE1829A4CD0031945A /* Images */,
+			);
+			name = Meter;
+			sourceTree = "<group>";
+		};
+		82497BBE1829A4CD0031945A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				82497BBF1829A4D70031945A /* Dot.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		82DFA8AD1826FFFD00B5D6EA = {
 			isa = PBXGroup;
 			children = (
@@ -127,17 +167,9 @@
 				82DFA8C81826FFFD00B5D6EA /* AppDelegate.h */,
 				82DFA8C91826FFFD00B5D6EA /* AppDelegate.m */,
 				82DFA8CB1826FFFD00B5D6EA /* Main.storyboard */,
-				82DFA8CE1826FFFD00B5D6EA /* LogInViewController.h */,
-				82DFA8CF1826FFFD00B5D6EA /* LogInViewController.m */,
-				82DFA8F71827232000B5D6EA /* RegisterViewController.h */,
-				82DFA8F81827232000B5D6EA /* RegisterViewController.m */,
-				82DFA8EE182702BB00B5D6EA /* MetersViewController.h */,
-				82DFA8EF182702BB00B5D6EA /* MetersViewController.m */,
-				82DFA8F11827031F00B5D6EA /* RankingViewController.h */,
-				82DFA8F21827031F00B5D6EA /* RankingViewController.m */,
-				82DFA8F41827032900B5D6EA /* GraphicsViewController.h */,
-				82DFA8F51827032900B5D6EA /* GraphicsViewController.m */,
+				82497BB91829395E0031945A /* ViewControllers */,
 				82DFA8D11826FFFD00B5D6EA /* Images.xcassets */,
+				82497BBD182939920031945A /* Meter */,
 				82DFA8C01826FFFD00B5D6EA /* Supporting Files */,
 			);
 			path = PureEnergy;
@@ -249,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82DFA8D21826FFFD00B5D6EA /* Images.xcassets in Resources */,
+				82497BC01829A4D70031945A /* Dot.png in Resources */,
 				82DFA8C41826FFFD00B5D6EA /* InfoPlist.strings in Resources */,
 				82DFA8CD1826FFFD00B5D6EA /* Main.storyboard in Resources */,
 			);
@@ -276,6 +309,7 @@
 				82DFA8F91827232000B5D6EA /* RegisterViewController.m in Sources */,
 				82DFA8C61826FFFD00B5D6EA /* main.m in Sources */,
 				82DFA8F31827031F00B5D6EA /* RankingViewController.m in Sources */,
+				82497BBC1829398E0031945A /* Meter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +518,7 @@
 				82DFA8EA1826FFFD00B5D6EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		82DFA8EB1826FFFD00B5D6EA /* Build configuration list for PBXNativeTarget "PureEnergyTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +527,7 @@
 				82DFA8ED1826FFFD00B5D6EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

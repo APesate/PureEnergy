@@ -54,28 +54,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - IBActions
-
-- (IBAction)registerNewUser:(id)sender {
+-(void)animateExitTo:(NSString*)segueIdentifier{
     __block const int downMove = 10;
     __block const int moveOffScreen = fieldsContainer.frame.origin.y + fieldsContainer.frame.size.height + 20;
     
-    [UIView animateWithDuration:0.7f animations:^{
+    [UIView animateWithDuration:0.3f animations:^{
         [fieldsContainer setFrame:CGRectMake(fieldsContainer.frame.origin.x,
                                              fieldsContainer.frame.origin.y + downMove,
                                              fieldsContainer.frame.size.width,
                                              fieldsContainer.frame.size.height)];
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.5f animations:^{
+        [UIView animateWithDuration:0.4f animations:^{
             [fieldsContainer setFrame:CGRectMake(fieldsContainer.frame.origin.x,
                                                  fieldsContainer.frame.origin.y - moveOffScreen,
                                                  fieldsContainer.frame.size.width,
                                                  fieldsContainer.frame.size.height)];
             [fieldsContainer setAlpha:0.0];
         } completion:^(BOOL finished) {
-            [self performSegueWithIdentifier:@"toRegister" sender:self];
+            [self performSegueWithIdentifier:segueIdentifier sender:self];
         }];
     }];
+}
+
+#pragma mark - IBActions
+
+- (IBAction)registerNewUser:(id)sender {
+    [self animateExitTo:@"toRegister"];
 }
 
 - (IBAction)recoverPassword:(id)sender {
@@ -96,7 +100,7 @@
         
         NSString* answer = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
         
-        if (![answer isEqualToString:@"0"]) {
+        if (![answer isEqualToString:@"0"] && response != nil) {
             
             NSDictionary* jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
             NSUserDefaults* userDefault = [NSUserDefaults standardUserDefaults];
@@ -105,7 +109,7 @@
             [userDefault setObject:[jsonDictionary objectForKey:@"nombre"] forKey:@"realName"];
             [userDefault setObject:[jsonDictionary objectForKey:@"apellido"] forKey:@"realLastname"];
             
-            [self performSegueWithIdentifier:@"toMeters" sender:self];
+            [self animateExitTo:@"toMeters"];
         }else{
             UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"The username and/or password is invalid" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alertView show];

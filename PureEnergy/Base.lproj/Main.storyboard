@@ -131,7 +131,7 @@
                         <outlet property="registerButton" destination="T6Q-CK-oJN" id="p2h-bU-AA6"/>
                         <outlet property="usernameLabel" destination="7PA-NC-wWV" id="ihr-dr-6a4"/>
                         <outlet property="usernameTextField" destination="PYd-TM-frK" id="xIB-q6-UgA"/>
-                        <segue destination="1KJ-Qz-6bk" kind="modal" identifier="toMeters" modalTransitionStyle="crossDissolve" id="txS-dE-cYa"/>
+                        <segue destination="1KJ-Qz-6bk" kind="modal" identifier="toMeters" modalTransitionStyle="coverVertical" id="txS-dE-cYa"/>
                         <segue destination="3NN-83-dAf" kind="modal" identifier="toRegister" modalTransitionStyle="coverVertical" id="iis-p9-gSg"/>
                     </connections>
                 </viewController>
@@ -151,25 +151,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ranking" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdz-a9-1Ce">
-                                <rect key="frame" x="129" y="273" width="63" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vP-iY-ItW">
-                                <rect key="frame" x="143" y="361" width="35" height="30"/>
+                                <rect key="frame" x="143" y="538" width="35" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.99239114539999995" green="1" blue="0.9780560586" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="goBack:" destination="T9U-if-Byt" eventType="touchUpInside" id="bef-D2-JfI"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rOv-Jx-VeN">
+                                <rect key="frame" x="20" y="20" width="280" height="528"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="T9U-if-Byt" id="sYh-cN-YJ5"/>
+                                    <outlet property="delegate" destination="T9U-if-Byt" id="QpX-xc-9yg"/>
+                                </connections>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="rankingTableView" destination="rOv-Jx-VeN" id="UZC-Oi-uTA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vst-Mh-Vw9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,12 +194,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GHs-FU-kQt">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GHs-FU-kQt" customClass="Meter">
                                 <rect key="frame" x="20" y="20" width="280" height="254"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hyj-Xe-7cO">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hyj-Xe-7cO" customClass="Meter">
                                 <rect key="frame" x="20" y="294" width="280" height="254"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -201,6 +208,8 @@
                         <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="electricMeter" destination="GHs-FU-kQt" id="W4Y-fy-4WS"/>
+                        <outlet property="waterMeter" destination="hyj-Xe-7cO" id="mhT-n9-T0v"/>
                         <segue destination="T9U-if-Byt" kind="modal" identifier="toRanking" id="tek-T2-k8j"/>
                         <segue destination="TX4-aS-ECJ" kind="modal" identifier="toGraphics" id="vfT-lL-y3P"/>
                     </connections>

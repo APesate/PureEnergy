@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Meter.h"
+#import "GraphicsViewController.h"
 
 @interface MetersViewController : UIViewController
 

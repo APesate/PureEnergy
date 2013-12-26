@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Delegate.h"
 
-@interface GraphicsViewController : UIViewController
 
+@interface GraphicsViewController : UIViewController<Delegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *scroller;
+@property (strong, nonatomic) NSString* ident;
 @end

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GraphicsViewController.h"
+#import "Persona.h"
 
-@interface RankingViewController : UIViewController
+@interface RankingViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
 @end

@@ -19,6 +19,9 @@
     __weak IBOutlet UIButton *forgotPasswordButton;
     __weak IBOutlet UIButton *loginButton;
     __weak IBOutlet UIButton *registerButton;
+    __weak IBOutlet UIActivityIndicatorView *activityIndicator;
+    __weak IBOutlet UIView *activityView;
+
     
     BOOL isScrolled;
 }
@@ -38,13 +41,27 @@
     UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
     
     [self.view addGestureRecognizer:tapGesture];
-    
+        
     [fieldsContainer.layer setCornerRadius:30];
+//    [fieldsContainer.layer setShadowOffset:CGSizeMake(0, 10)];
+//    [fieldsContainer.layer setShadowOpacity:100.0f];
+//    [fieldsContainer.layer setShadowColor:[[UIColor colorWithWhite:0.000 alpha:0.500] CGColor]];
+//    [fieldsContainer.layer setBorderColor:[[UIColor blackColor] CGColor]];
+//    [fieldsContainer.layer setBorderWidth:0.0];
+//    [fieldsContainer.layer setShadowRadius:5.0];
+    
+    NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([userDefaults valueForKey:@"username"]) {
+        usernameTextField.text = [userDefaults valueForKey:@"username"];
+        passwordTextField.text = [userDefaults valueForKey:@"password"];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [UIView animateWithDuration:0.7f animations:^{
         [fieldsContainer setAlpha:1.0];
+        [bannerImageView setAlpha:1.0];
     }];
 }
 
@@ -69,7 +86,12 @@
                                                  fieldsContainer.frame.origin.y - moveOffScreen,
                                                  fieldsContainer.frame.size.width,
                                                  fieldsContainer.frame.size.height)];
+            [bannerImageView setFrame:CGRectMake(bannerImageView.frame.origin.x,
+                                                 bannerImageView.frame.origin.y - moveOffScreen,
+                                                 bannerImageView.frame.size.width,
+                                                 bannerImageView.frame.size.height)];
             [fieldsContainer setAlpha:0.0];
+            [bannerImageView setAlpha:0.0];
         } completion:^(BOOL finished) {
             [self performSegueWithIdentifier:segueIdentifier sender:self];
         }];
@@ -93,6 +115,11 @@
 
 -(void)tryLogIn{
     
+    [activityView setHidden:NO];
+    [UIView animateWithDuration:0.3 animations:^{
+        [activityView setAlpha:0.5];
+    }];
+    [activityIndicator startAnimating];
     NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"http://ceis.unimet.edu.ve/WebService/Andres/login.php?appKey=KEY&seudonimo=%@&pass=%@", usernameTextField.text, passwordTextField.text]];
     NSURLRequest* request = [NSURLRequest requestWithURL:url];
     
@@ -100,21 +127,34 @@
         
         NSString* answer = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
         
-        if (![answer isEqualToString:@"0"] && response != nil) {
-            
-            NSDictionary* jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-            NSUserDefaults* userDefault = [NSUserDefaults standardUserDefaults];
-            [userDefault setObject:[jsonDictionary objectForKey:@"seudonimo"] forKey:@"username"];
-            [userDefault setObject:[jsonDictionary objectForKey:@"password"] forKey:@"password"];
-            [userDefault setObject:[jsonDictionary objectForKey:@"nombre"] forKey:@"realName"];
-            [userDefault setObject:[jsonDictionary objectForKey:@"apellido"] forKey:@"realLastname"];
-            
-            [self animateExitTo:@"toMeters"];
-        }else{
+        if([answer isEqualToString:@"1"]){
             UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"The username and/or password is invalid" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alertView show];
+        }else if([answer isEqualToString:@"0"]){
+            UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Error connecting to server.\nPlease try again later" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+        }else if(response != nil){
+            NSDictionary* userInformationDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    
+            
+            NSUserDefaults* userDefault = [NSUserDefaults standardUserDefaults];
+            [userDefault setObject:[userInformationDictionary objectForKey:@"id"] forKey:@"id"];
+            [userDefault setObject:[userInformationDictionary objectForKey:@"username"] forKey:@"username"];
+            [userDefault setValue:passwordTextField.text forKey:@"password"];
+            [userDefault setObject:[userInformationDictionary objectForKey:@"nombre"] forKey:@"realName"];
+            [userDefault setObject:[userInformationDictionary objectForKey:@"apellido"] forKey:@"realLastname"];
+            [userDefault setObject:[userInformationDictionary objectForKey:@"email"] forKey:@"email"];
+            [userDefault synchronize];
+            
+            [self animateExitTo:@"toMeters"];
         }
         
+        [activityIndicator stopAnimating];
+        [UIView animateWithDuration:0.3 animations:^{
+            [activityView setAlpha:0];
+        } completion:^(BOOL finished) {
+            [activityView setHidden:YES];
+        }];
         if (error) {
             NSLog(@"Error: %@", error);
         }
@@ -133,6 +173,10 @@
                                                  fieldsContainer.frame.origin.y - scroll,
                                                  fieldsContainer.frame.size.width,
                                                  fieldsContainer.frame.size.height)];
+            [bannerImageView setFrame:CGRectMake(bannerImageView.frame.origin.x,
+                                                bannerImageView.frame.origin.y - 20,
+                                                bannerImageView.frame.size.width,
+                                                 bannerImageView.frame.size.height)];
         }];
         isScrolled = YES;
     }
@@ -148,6 +192,10 @@
                                                  fieldsContainer.frame.origin.y + scroll,
                                                  fieldsContainer.frame.size.width,
                                                  fieldsContainer.frame.size.height)];
+            [bannerImageView setFrame:CGRectMake(bannerImageView.frame.origin.x,
+                                                 bannerImageView.frame.origin.y + 20,
+                                                 bannerImageView.frame.size.width,
+                                                 bannerImageView.frame.size.height)];
         }];
         isScrolled = NO;
     }

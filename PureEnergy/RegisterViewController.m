@@ -45,7 +45,20 @@
 	// Do any additional setup after loading the view.
     [scrollView addGestureRecognizer:tapGesture];
     [fieldsContainer.layer setCornerRadius:15];
+//    [fieldsContainer.layer setShadowOffset:CGSizeMake(0, 5)];
+//    [fieldsContainer.layer setShadowOpacity:80.0f];
+//    [fieldsContainer.layer setShadowColor:[[UIColor colorWithWhite:0.000 alpha:0.500] CGColor]];
+//    [fieldsContainer.layer setBorderColor:[[UIColor blackColor] CGColor]];
+//    [fieldsContainer.layer setBorderWidth:0.0];
+//    [fieldsContainer.layer setShadowRadius:5.0];
+    
     [buttonContainers.layer setCornerRadius:15];
+//    [buttonContainers.layer setShadowOffset:CGSizeMake(0, 5)];
+//    [buttonContainers.layer setShadowOpacity:80.0f];
+//    [buttonContainers.layer setShadowColor:[[UIColor colorWithWhite:0.000 alpha:0.500] CGColor]];
+//    [buttonContainers.layer setBorderColor:[[UIColor blackColor] CGColor]];
+//    [buttonContainers.layer setBorderWidth:0.0];
+//    [buttonContainers.layer setShadowRadius:5.0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,7 +86,7 @@
 
 -(BOOL)verifyFields{
     if (![passwordTextField.text isEqualToString:verifyPassTextField.text]) {
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"The Verifyed password and the real password doen't match" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"The Verifyed password and the real password doesn't match" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
         passwordTextField.text = @"";
         verifyPassTextField.text = @"";
@@ -119,6 +132,11 @@
         }else if ([answer isEqualToString:@"4"]){
             UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Error connecting to server.\nPlease try again later" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alertView show];
+        }else{
+            UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Error!" message:@"Please enter a valid email." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+            emailTextField.text = @"";
+            [emailTextField becomeFirstResponder];
         }
         
         if (error) {
